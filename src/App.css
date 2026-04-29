@@ -1,0 +1,217 @@
+.app-shell {
+  display: grid;
+  gap: 1.25rem;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #082b3e 0%, #0d3f45 48%, #176654 100%);
+  color: #f4f2e7;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 14px 30px rgba(9, 35, 45, 0.26);
+}
+
+.page-header h1 {
+  margin: 0.3rem 0 0.9rem;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  color: inherit;
+}
+
+.page-header p {
+  margin: 0;
+  max-width: 75ch;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 0.9rem;
+}
+
+.file-upload,
+button {
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-radius: 0.7rem;
+  padding: 0.62rem 0.88rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.file-upload {
+  display: inline-flex;
+  align-items: center;
+}
+
+.file-upload input {
+  display: none;
+}
+
+button:hover,
+.file-upload:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(17, 48, 52, 0.12);
+}
+
+button.ghost {
+  background: transparent;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.85rem;
+  padding: 0.9rem;
+  box-sizing: border-box;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  font-family: var(--font-mono);
+  color: var(--text-main);
+  background: #fff;
+  resize: vertical;
+}
+
+textarea:focus,
+button:focus-visible,
+.file-upload:focus-within {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.error-box {
+  margin: 0.8rem 0 0;
+  border-radius: 0.7rem;
+  background: #fff0ec;
+  color: #8e1f1f;
+  border: 1px solid #f5c8be;
+  padding: 0.6rem 0.75rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.1rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.metric-card {
+  border: 1px solid var(--panel-border);
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f9faf7 100%);
+  min-height: 6.7rem;
+}
+
+.metric-good {
+  border-color: #9ac5a7;
+}
+
+.metric-warning {
+  border-color: #e7c786;
+}
+
+.metric-critical {
+  border-color: #e9a18d;
+}
+
+.metric-label {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.metric-value {
+  margin: 0.45rem 0;
+  font-size: 1.32rem;
+  line-height: 1.2;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+}
+
+.metric-hint {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.83rem;
+}
+
+.footer-meta {
+  margin: 0.95rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.84rem;
+}
+
+@media (max-width: 1080px) {
+  .metrics-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 1.2rem 0.9rem 2rem;
+    gap: 1rem;
+  }
+
+  .page-header,
+  .panel {
+    padding: 0.9rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .controls-row {
+    flex-direction: column;
+  }
+
+  .file-upload,
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+}
