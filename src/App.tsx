@@ -372,8 +372,8 @@ const MetricCard = ({
 
 export const App = () => {
   const [rawInput, setRawInput] = useState('')
-  const [metrics, setMetrics] = useState<BatteryMetrics | null>()
-  const [error, setError] = useState<string | null>()
+  const [metrics, setMetrics] = useState<BatteryMetrics | null>(null)
+  const [error, setError] = useState<string | null>(null)
   const [isLoadingFile, setIsLoadingFile] = useState(false)
 
   const runAnalysis = (payload: string) => {
